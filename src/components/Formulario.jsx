@@ -68,13 +68,57 @@ const Formulario = ({ onReg }) => {
 
   /* formulario, validaciones se realizan con funcion validar con evento onSubmit al enviar el formulario */
   /* onChange para actualizar el estado con valor ingresado */
+  return (
+    <form className="form-inner h-100 d-flex flex-column gap-2" onSubmit={validar}>
+      <div className="form-group">
+        <input
+          className="form-control mb-3"
+          type="text"
+          name="nombre"
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
+          placeholder="Nombre"
+      />
+    </div>
+    <div className="form-group">
+        <input
+          className="form-control mb-3"
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="tuemail@ejemplo.com"
+      />
+    </div>
+    <div className="form-group">
+        <input
+          className="form-control mb-3"
+          type="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Contraseña"
+      />
+    </div>
+    <div className="form-group">
+        <input
+          className="form-control mb-3"
+          type="password"
+          name="confirmarPassword"
+          value={confirmarPassword}
+          onChange={(e) => setConfirmarPassword(e.target.value)}
+          placeholder="Confirme su contraseña"
+      />
+      </div>
+        <button
+          className="form-control rounded-3 btn btn-success mt-2 mb-2"
+          type="submit"
+        >
+          Registrarse
+        </button>
+    </form>
+);
+}
 
+export default Formulario;
 
-
-
-
-
-
-
-
-};
