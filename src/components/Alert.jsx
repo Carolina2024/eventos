@@ -1,11 +1,8 @@
 import React from 'react'
 
-function Alert({type, message }) {
-    return (
-        <div className={`alert alert-${type}`} role='alert'>
-            {message}
-      </div> 
-    )
-  }
+const Alert = ({ type, message }) => {
+    return <div className={`alert alert-${type}`}>{message}</div>;
+  };
   
-  export default Alert
+  export default Alert;
+  
