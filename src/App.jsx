@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css"; /* se agrega para que funcione bootstrap */
+import Registro from "./components/Registro"; /* se agrega este import */
+import { useState } from "react"; /* se agrega en forma automatica */
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  /* hook useState para declarar variable de estado llamada estadoRegistro y una funcion setEstadoRegistro */
+  const [estadoRegistro, setEstadoRegistro] = useState({
+    /* estado inicial con dos propiedades con icicio null y vacio */
+    success: null,
+    message: "",
+  });
+
+  /* funcion formRegistro toma las dos propiedades y despues actualiza el estado con nuevos valores */
+  const formRegistro = ({ success, message }) => {
+    setEstadoRegistro({ success, message });
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      {/* se le pasan dos props para actualizar y para mensaje */}
+      <Registro onRegistro={formRegistro} estadoRegistro={estadoRegistro} />
+    </div>
+  );
+};
 
-export default App
+export default App;
