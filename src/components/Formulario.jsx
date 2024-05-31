@@ -111,7 +111,7 @@ const Formulario = ({ onReg }) => {
       />
       </div>
         <button
-          className="form-control rounded-3 btn btn-success mt-2 mb-2"
+          className="rounded-3 btn btn-success mt-2 mb-2"
           type="submit"
         >
           Registrarse
